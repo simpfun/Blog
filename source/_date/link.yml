@@ -1,0 +1,14 @@
+ class_name: 友情链接
+  class_desc: 我的友情好伙伴
+  link_list:
+      name: Koilo's Blog
+      link: https://www.simpfun.eu.org/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=2382752120&s=640
+      descr: 古今之成大事者，不惟有超世之才，亦必有坚忍不拔之志。
+ class_name: 网站
+  class_desc: 值得推荐的网站
+  link_list:
+      name: Twitter
+      link: https://twitter.com/
+      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
+      descr: 社交分享平台

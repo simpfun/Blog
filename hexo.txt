@@ -1,0 +1,129 @@
+﻿配置git信息:
+git config --global user.name "simpfun"
+git config --global user.email "2382752120@qq.com"
+
+创建密钥SSH key:
+ssh-keygen -t rsa -C "2382752120@qq.com"
+
+查看创建的密钥:
+cat ~/.ssh/id_rsa.pub
+
+检查SSH 是否成功:
+ssh -T git@github.com
+
+安装Hexo:
+npm install -g hexo-cli
+
+启动Hexo:
+hexo s 
+Ctrl+C 停止
+
+上传：
+
+    hexo clean
+    hexo deploy
+    hexo g 
+    hexo d 
+
+
+
+以下为可配置安装:
+
+安装搜索:
+npm install hexo-generator-search --save
+
+
+
+live2d:
+npm install --save hexo-helper-live2d
+
+下载模型：
+npm install live2d-widget-model-shizuku
+
+所有模型：
+live2d-widget-model-chitose
+live2d-widget-model-epsilon2_1
+live2d-widget-model-gf
+live2d-widget-model-haru/01 (use npm install –save live2d-widget-model-haru)
+live2d-widget-model-haru/02 (use npm install –save live2d-widget-model-haru)
+live2d-widget-model-haruto
+live2d-widget-model-hibiki
+live2d-widget-model-hijiki
+live2d-widget-model-izumi
+live2d-widget-model-koharu
+live2d-widget-model-miku
+live2d-widget-model-ni-j
+live2d-widget-model-nico
+live2d-widget-model-nietzsche
+live2d-widget-model-nipsilon
+live2d-widget-model-nito
+live2d-widget-model-shizuku
+live2d-widget-model-tororo
+live2d-widget-model-tsumiki
+live2d-widget-model-unitychan
+live2d-widget-model-wanko
+live2d-widget-model-z16
+
+增加到网站目录_config.yml
+live2d:
+  enable: true
+  pluginModelPath: assets/
+  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
+  debug: false # 调试, 是否在控制台输出日志
+  model:
+    use: live2d-widget-model-epsilon2_1  #模型选择
+  display:
+    position: left  #模型位置
+    width: 150       #模型宽度
+    height: 300      #模型高度
+  mobile:
+    show: false      #是否在手机端显示
+
+字数统计：
+npm install hexo-wordcount --save
+修改主题配置文件_config.butterfly.yml中的wordcount
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+增加哔哩哔哩番剧：
+npm install hexo-bilibili-bangumi --save
+npm install hexo-bilibili-bangumi --update --save
+修改站点配置文件_config.yml
+bangumi:
+  enable: true 
+  vmid: 321638084
+  title: '生命不息，追番不止。'
+  quote: 'Where there is life, there is life.'
+  show: 1
+  loading: '/img/bangumi-loading.gif'
+
+hexo new page bangumis
+
+找到source/bangumis/index.md 这个文件，修改这个文件，添加 type: "bangumis"
+
+留言板：
+npm install hexo-butterfly-envelope --save
+在站点配置文件或者主题配置文件添加配置项：
+# envelope_comment
+# see https://akilar.top/posts/e2d3c450/
+envelope_comment:
+  enable: true #控制开关
+  custom_pic:      
+    cover: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
+    line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png #信笺底部图片
+    beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png # 信封前半部分
+    afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png # 信封后半部分
+  message: #信笺正文，多行文本，写法如下
+    - 有什么想问的？
+    - 有什么想说的？
+    - 有什么想吐槽的？
+    - 哪怕是有什么想吃的，都可以告诉我哦~
+  bottom: 自动书记人偶竭诚为您服务！ #仅支持单行文本
+  height: #1050px，信封划出的高度
+  path: #【可选】comments 的路径名称。默认为 comments，生成的页面为 comments/index.html
+  front_matter: #【可选】comments页面的 front_matter 配置
+    title: 留言板
+    comments: true
