@@ -103,10 +103,6 @@ theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repository: git@github.com:simpfun/simpfun.github.io.git
-  branch: master
 live2d:
   enable: true
   pluginModelPath: assets/
