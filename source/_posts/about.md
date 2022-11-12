@@ -22,7 +22,9 @@ tags:
 1.[主页](https://www.simpfun.top) 
 2.[论坛](https://forum.simpfun.eu.org) 
 3.[在线网盘](https://files.simpfun.eu.org) 
-4.[免费网站托管](http://koilo.ga)  
+4.[音乐播放器](https://kplayer.simpfun.eu.org)  
+5.[免费网站托管](http://koilo.ga)  
+
 
 Vercel： 
 1.[Onemanager部署（汉化）](/HTML/Vercel-Onemanager-Deploy.html)
