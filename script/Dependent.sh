@@ -1,2 +1,2 @@
-npm install hexo-cli
+npm install hexo-cli -g
 npm install
