@@ -1,27 +1,46 @@
-name: Deploy Hexo
-on:
+name: Hexo博客持续集成
+
+on: 
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - master
+      
 jobs:
-  build:
-    runs-on: ubuntu-latest     
+  build: 
+    runs-on: ubuntu-latest 
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
-      - name: Use Node.js 
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-      - name: Setup Hexo Blog Dependencies
-        run: bash ./script/Dependent.sh
-      - name: Build with Hexo
-        run: hexo clean && hexo generate
-      - name: Hexo Blog Deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bash ./script/Deploy.sh   
+    - name: 检出仓库代码
+      uses: actions/checkout@master
+
+    - name: 安装Node.js 11.x 
+      uses: actions/setup-node@master
+      with:
+        node-version: "11.x"
+
+    - name: 安装Hexo依赖
+      run: |
+        npm install hexo-cli -g
+        npm install
+
+    - name: 构建Hexo
+      run: |
+        hexo clean
+        hexo generate 
+        - name: 配置Github部署私钥
+  env:
+    HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
+  run: |
+    mkdir -p ~/.ssh/
+    echo "$HEXO_DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
+    ssh-keyscan github.com >> ~/.ssh/known_hosts
+    
+    - name: 配置Git信息
+      run: |
+    git config --global user.name 'simpfun'
+    git config --global user.email '2382752120@qq.com'
+
+    - name: 部署Hexo到Github
+      run: hexo deploy
+
