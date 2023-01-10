@@ -41,6 +41,5 @@ jobs:
     git config --global user.name 'simpfun'
     git config --global user.email '2382752120@qq.com'
 
-    - name: 部署Hexo到Github
-      run: hexo deploy
+
 
