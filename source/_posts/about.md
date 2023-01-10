@@ -16,15 +16,12 @@ tags:
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1384450197&auto=1&height=66"></iframe>     
 
 
-由于站长我本人是个学生，没有太多资金购买服务器，所以我就用Github和Vercel开了这个网站，主要还是想用来装逼哈哈  
+由于站长我本人是个学生，没有太多资金购买服务器，所以我就用Github和Vercel开了这个网站，主要还是想用来装逼哈哈哈哈哈哈哈哈哈    
 
 其他网站：
-1.[主页](https://www.simpfun.top) 
-2.[论坛](https://forum.simpfun.eu.org) 
-3.[在线网盘](https://files.simpfun.eu.org) 
-4.[音乐播放器](https://kplayer.simpfun.eu.org)  
+1.[主页](https://www.simpfun.eu.org) 
+2.[状态监测](https://status.simpfun.eu.org) 
+3.[在线网盘](https://pan.simpfun.eu.org) 
+4.[音乐播放器](https://music.simpfun.eu.org)  
 5.[免费网站托管](http://koilo.ga)  
 
-
-Vercel： 
-1.[Onemanager部署（汉化）](/HTML/Vercel-Onemanager-Deploy.html)
